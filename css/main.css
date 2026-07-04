@@ -1,0 +1,184 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--page-bg);
+}
+
+body {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  line-height: 1.12;
+  opacity: 1;
+  transition:
+    opacity 500ms var(--ease-fade),
+    filter 500ms var(--ease-fade);
+}
+
+body.is-ready {
+  opacity: 1;
+}
+
+body.is-leaving {
+  opacity: 0;
+  filter: blur(6px);
+  will-change: opacity, filter;
+}
+
+.memory-page {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.memory-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.memory-visual,
+.memory-visual::before,
+.memory-visual::after,
+.memory-visual img {
+  position: absolute;
+  inset: 0;
+}
+
+.memory-visual {
+  z-index: -2;
+  background: #080706;
+}
+
+.memory-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 43% 42%;
+  filter:
+    saturate(0.88)
+    contrast(0.96)
+    brightness(0.9)
+    sepia(0.045);
+  transform: scale(1.012);
+}
+
+.memory-visual::before {
+  z-index: 1;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.04), transparent 31%),
+    radial-gradient(circle at 50% 48%, transparent 0 42%, rgba(0, 0, 0, 0.43) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(4, 3, 3, 0.46));
+  pointer-events: none;
+}
+
+.memory-visual::after {
+  z-index: 2;
+  content: "";
+  background: rgba(9, 8, 7, 0.08);
+  backdrop-filter: blur(0.7px);
+  -webkit-backdrop-filter: blur(0.7px);
+  pointer-events: none;
+}
+
+.posa-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.09), transparent 28%),
+    linear-gradient(180deg, #11100f 0%, #070707 68%, #050505 100%);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.posa-stage {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding:
+    calc(32px + var(--safe-top))
+    clamp(20px, 5vw, 56px)
+    calc(32px + var(--safe-bottom));
+  place-items: center;
+}
+
+.posa-card {
+  width: min(100%, 460px);
+  padding: clamp(28px, 5vw, 48px);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.045)),
+    rgba(18, 17, 17, 0.72);
+  box-shadow: var(--shadow-deep);
+  backdrop-filter: blur(34px) saturate(1.2);
+  -webkit-backdrop-filter: blur(34px) saturate(1.2);
+}
+
+.posa-card h1 {
+  font-size: clamp(46px, 10vw, 76px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.posa-subtitle {
+  max-width: 330px;
+  margin: 18px auto 32px;
+  color: var(--text-secondary);
+  font-size: clamp(17px, 3.4vw, 21px);
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.posa-button {
+  min-height: 58px;
+  width: 100%;
+  border-radius: 999px;
+  color: rgba(10, 9, 8, 0.96);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.34);
+  font-size: 17px;
+  font-weight: 700;
+  transition:
+    transform 420ms var(--ease-apple),
+    background 420ms var(--ease-apple),
+    opacity 420ms var(--ease-apple);
+}
+
+.posa-button:active {
+  transform: scale(0.985);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 760px) {
+  .memory-visual img {
+    object-position: 42% 43%;
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
