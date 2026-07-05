@@ -284,44 +284,13 @@
   transform: scale(1.16);
 }
 
-.continue-button {
-  min-width: 162px;
-  min-height: 48px;
-  padding: 0 24px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  color: var(--text-primary);
-  background: rgba(18, 17, 16, 0.34);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: translate3d(0, 12px, 0);
-  backdrop-filter: blur(30px) saturate(1.32);
-  -webkit-backdrop-filter: blur(30px) saturate(1.32);
-  font-size: 16px;
-  font-weight: 650;
-  transition:
-    transform 380ms var(--ease-apple),
-    background 380ms var(--ease-apple),
-    opacity 380ms var(--ease-apple);
-}
-
-.is-ready .player-shell,
-.is-ready .continue-button {
+.is-ready .player-shell {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 
 .is-ready .player-shell {
   animation: player-enter 700ms var(--ease-apple) 450ms backwards;
-}
-
-.is-ready .continue-button {
-  animation: player-enter 500ms var(--ease-apple) 600ms backwards;
-}
-
-.continue-button:active {
-  transform: scale(0.982);
-  background: rgba(255, 255, 255, 0.14);
 }
 
 @keyframes player-spin {
@@ -382,8 +351,4 @@
     font-size: 14px;
   }
 
-  .continue-button {
-    min-height: 46px;
-    font-size: 15px;
-  }
 }

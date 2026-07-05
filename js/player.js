@@ -145,10 +145,6 @@
   audio.addEventListener("ended", function () {
     setPlaying(false);
     updateTimes();
-
-    if (window.MemoryApp) {
-      window.MemoryApp.goNext();
-    }
   });
 
   audio.addEventListener("error", function () {

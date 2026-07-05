@@ -4,17 +4,7 @@
   --text-primary: rgba(255, 255, 255, 0.96);
   --text-secondary: rgba(255, 255, 255, 0.66);
   --text-tertiary: rgba(255, 255, 255, 0.45);
-  --glass-bg: rgba(28, 24, 22, 0.48);
-  --glass-bg-strong: rgba(22, 20, 19, 0.68);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-highlight: rgba(255, 255, 255, 0.34);
-  --shadow-deep: 0 32px 90px rgba(0, 0, 0, 0.46);
-  --shadow-soft: 0 18px 54px rgba(0, 0, 0, 0.32);
   --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-fade: cubic-bezier(0.32, 0.72, 0, 1);
   --radius-xl: 34px;
-  --radius-lg: 28px;
-  --radius-md: 20px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-top: env(safe-area-inset-top, 0px);
 }
